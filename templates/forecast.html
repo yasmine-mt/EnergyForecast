@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forecast Energy Consumption</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Forecast Energy Consumption</h1>
+        <div class="header-buttons">
+            <a href="/" class="btn">Back to Dashboard</a>
+        </div>
+    </header>
+    <main>
+        <form id="forecastForm" class="card">
+            <div class="form-group">
+                <label for="model">Select Model:</label>
+                <select id="model" name="model">
+                    <option value="lstm">LSTM</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="selected_date">Select Date:</label>
+                <input type="date" id="selected_date" name="selected_date" required>
+            </div>
+            <button type="submit" class="btn">Predict</button>
+        </form>
+        <div id="loading" class="hidden">
+            <img src="{{ url_for('static', filename='images/loading.gif') }}" alt="Loading..." class="loading-spinner">
+        </div>
+        <div id="results" class="card">
+            <h2>Predictions</h2>
+            <table id="predictionTable">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Consumption (Wh)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="predictionChart"></div>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Energy Consumption Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Energy Consumption Analysis Dashboard</h1>
+        <div class="header-buttons">
+            <a href="/forecast" class="btn">Go to Forecast</a>
+        </div>
+    </header>
+    <main>
+        <!-- Key Metrics Section -->
+        <div class="metrics-container">
+            <div class="card">
+                <h2>Total Consumption</h2>
+                <p id="totalConsumption">Loading...</p>
+            </div>
+            <div class="card">
+                <h2>Average Daily Consumption</h2>
+                <p id="avgConsumption">Loading...</p>
+            </div>
+            <div class="card">
+                <h2>Peak Consumption</h2>
+                <p id="peakConsumption">Loading...</p>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="chart-container card">
+            <h2>Energy Consumption Trends</h2>
+            <div id="lineChart"></div>
+            <div id="barChart"></div>
+        </div>
+
+        <!-- Model Performance Section -->
+        <div class="performance-container card">
+            <h2>Model Performance</h2>
+            <table id="performanceTable">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>RMSE</th>
+                        <th>MAE</th>
+                        <th>R²</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LSTM</td>
+                        <td id="lstmRMSE">Loading...</td>
+                        <td id="lstmMAE">Loading...</td>
+                        <td id="lstmR2">Loading...</td>
+                    </tr>
+                    <tr>
+                        <td>CNN-LSTM</td>
+                        <td id="cnnLstmRMSE">Loading...</td>
+                        <td id="cnnLstmMAE">Loading...</td>
+                        <td id="cnnLstmR2">Loading...</td>
+                    </tr>
+                 <tr>
+                        <td>GRU</td>
+                        <td id="gruRMSE">Loading...</td>
+                        <td id="gruMAE">Loading...</td>
+                        <td id="gruR2">Loading...</td>
+                    </tr>
+                    <tr>
+                        <td>RandomForestRegressor</td>
+                        <td id="rfRMSE">Loading...</td>
+                        <td id="rfMAE">Loading...</td>
+                        <td id="rfR2">Loading...</td>
+                    </tr>
+
+                <tr>
+                        <td>SARIMA</td>
+                        <td id="sarimaRMSE">Loading...</td>
+                        <td id="sarimaMAE">Loading...</td>
+                        <td id="sarimaR2">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
