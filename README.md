@@ -1,8 +1,8 @@
-Energy Consumption Forecasting Interface
-Overview
+## Energy Consumption Forecasting Interface
+## Overview
 This project provides a web-based interface for forecasting energy consumption using machine learning models. The interface allows users to select a model, choose a date, and obtain predictions in tabular and graphical formats.
 
-Features
+## Features
 User-friendly interface for energy consumption forecasting
 Selection of machine learning models (e.g., LSTM)
 Date selection for forecast generation
