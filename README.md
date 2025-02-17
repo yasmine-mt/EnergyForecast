@@ -4,7 +4,7 @@ This project provides a web-based interface for forecasting energy consumption u
 
 ## Features
 User-friendly interface for energy consumption forecasting
-Selection of machine learning models (e.g., LSTM)
+Selection of models (e.g., LSTM)
 Date selection for forecast generation
 Real-time predictions displayed in a table
 Interactive visualization using Plotly
